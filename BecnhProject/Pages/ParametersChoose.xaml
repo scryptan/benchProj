@@ -1,0 +1,41 @@
+﻿<Page x:Class="BecnhProject.Pages.ParametersChoose"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:BecnhProject.Pages"
+      mc:Ignorable="d"
+      Title="ParametersChoose" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0">L = </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1">H = </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2">D = </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3">M = </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4">n = </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5">Дальваческий материал</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6">Покупной материал</TextBlock>
+
+        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0" x:Name="LengthBox" />
+        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="HeightBox" />
+        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="2" x:Name="DiameterBox" />
+        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="3" x:Name="MassBox" />
+        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="4" x:Name="CountBox" />
+        <CheckBox Grid.Column="1" Grid.Row="5" x:Name="IsFree" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="6" x:Name="CostBox" />
+        <Button Grid.Column="1" Grid.Row="7" x:Name="NextButton" Click="NextButton_OnClick">Далее</Button>
+    </Grid>
+</Page>

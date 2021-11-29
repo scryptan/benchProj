@@ -1,0 +1,30 @@
+﻿<Window x:Class="BecnhProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid Background="Gainsboro">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0" Background="Azure">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="BenchButton" Click="BenchButton_OnClick"></Button>
+            <Button Grid.Row="1" x:Name="MaterialButton" Click="MaterialButton_OnClick"></Button>
+            <Button Grid.Row="2" x:Name="BlankButton" Click="BlankButton_OnClick"></Button>
+            <Button Grid.Row="3" x:Name="ParametersButton" Click="ParametersButton_OnClick"></Button>
+            <Button Grid.Row="4" x:Name="TechButton" Click="TechButton_OnClick"></Button>
+        </Grid>
+        <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>
