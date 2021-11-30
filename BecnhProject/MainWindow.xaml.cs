@@ -53,7 +53,7 @@ namespace BecnhProject
         {
         };
 
-        public decimal V => BlankHeight != -1
+        public decimal V => BlankHeight > 0
             ? BlankLength * BlankHeight * BlankDiameter
             : BlankLength * (decimal) Math.PI * BlankDiameter * BlankDiameter / 4;
 

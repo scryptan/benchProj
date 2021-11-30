@@ -41,19 +41,19 @@ namespace BecnhProject.Pages
             }
 
             if (_mainWindow.BlankHeight == -1)
-                ParametersText.Text = $@"L={_mainWindow.BlankLength}
-D={_mainWindow.BlankDiameter}
-M={_mainWindow.BlueprintMass}
-n={_mainWindow.ModelCount}
+                ParametersText.Text = $@"L, мм={_mainWindow.BlankLength}
+D, мм={_mainWindow.BlankDiameter}
+M, кг={_mainWindow.BlueprintMass}
+n, шт={_mainWindow.ModelCount}
 
 Сотношение длины к диаметру:
 L/D: {ld}";
             else
-                ParametersText.Text = $@"L={_mainWindow.BlankLength}
-D={_mainWindow.BlankDiameter}
-M={_mainWindow.BlueprintMass}
-H={_mainWindow.BlankHeight}
-n={_mainWindow.ModelCount}
+                ParametersText.Text = $@"L, мм={_mainWindow.BlankLength}
+D, мм={_mainWindow.BlankDiameter}
+M, кг={_mainWindow.BlueprintMass}
+H, мм={_mainWindow.BlankHeight}
+n, шт={_mainWindow.ModelCount}
 
 Сотношение длины к диаметру:
 L/D={ld}";

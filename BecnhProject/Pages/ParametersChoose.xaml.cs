@@ -30,6 +30,7 @@ namespace BecnhProject.Pages
             try
             {
                 _mainWindow.BlankLength = GetDecimalValue(LengthBox.Text);
+                _mainWindow.BlankHeight = GetDecimalValue(HeightBox.Text);
                 if (HeightBox.Visibility == Visibility.Hidden)
                     _mainWindow.BlankHeight = -1;
                 _mainWindow.BlankDiameter = GetDecimalValue(DiameterBox.Text);
