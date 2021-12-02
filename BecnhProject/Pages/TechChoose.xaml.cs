@@ -28,8 +28,10 @@ namespace BecnhProject.Pages
             if (GetDecimalValue(ExternalThread.Text) != 0)
                 _mainWindow.Coef *= defaultCoef;
 
-            _mainWindow.Coef *= GetDecimalValue(((ComboBoxItem) MinimalPlane.SelectedItem).Tag.ToString());
-            _mainWindow.Coef *= GetDecimalValue(((ComboBoxItem) QualitetLower.SelectedItem).Tag.ToString());
+            if (MinimalPlane.SelectedItem != null)
+                _mainWindow.Coef *= GetDecimalValue(((ComboBoxItem) MinimalPlane.SelectedItem).Tag.ToString());
+            if (QualitetLower.SelectedItem != null)
+                _mainWindow.Coef *= GetDecimalValue(((ComboBoxItem) QualitetLower.SelectedItem).Tag.ToString());
 
             if (ThickWall.IsChecked ?? false) _mainWindow.Coef *= defaultCoef;
             if (LatheOperation.IsChecked ?? false) _mainWindow.Coef *= defaultCoef;
@@ -86,7 +88,7 @@ L/D={ldStr}";
 
             foreach (var element in Holder.Children)
             {
-                if (element is TextBlock textBlock && string.IsNullOrEmpty((string)textBlock.Tag))
+                if (element is TextBlock textBlock && string.IsNullOrEmpty((string) textBlock.Tag))
                 {
                     textBlock.Background = _mainWindow.blueGradientBrush;
                     textBlock.Foreground = new SolidColorBrush(Colors.Azure);
