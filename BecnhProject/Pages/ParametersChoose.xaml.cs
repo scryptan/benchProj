@@ -60,6 +60,8 @@ namespace BecnhProject.Pages
         {
             HeightBox.Visibility =
                 _mainWindow.BlankType == BlankType.RollMetal ? Visibility.Hidden : Visibility.Visible;
+            HeightBlock.Visibility =
+                _mainWindow.BlankType == BlankType.RollMetal ? Visibility.Hidden : Visibility.Visible;
         }
     }
 }

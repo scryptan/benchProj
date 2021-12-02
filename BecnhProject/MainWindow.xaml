@@ -19,11 +19,11 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" x:Name="BenchButton" Click="BenchButton_OnClick"></Button>
-            <Button Grid.Row="1" x:Name="MaterialButton" Click="MaterialButton_OnClick"></Button>
-            <Button Grid.Row="2" x:Name="BlankButton" Click="BlankButton_OnClick"></Button>
-            <Button Grid.Row="3" x:Name="ParametersButton" Click="ParametersButton_OnClick"></Button>
-            <Button Grid.Row="4" x:Name="TechButton" Click="TechButton_OnClick"></Button>
+            <Button Grid.Row="0" Foreground="Azure" x:Name="BenchButton" Click="BenchButton_OnClick"></Button>
+            <Button Grid.Row="1" Foreground="Azure" x:Name="MaterialButton" Click="MaterialButton_OnClick"></Button>
+            <Button Grid.Row="2" Foreground="Azure" x:Name="BlankButton" Click="BlankButton_OnClick"></Button>
+            <Button Grid.Row="3" Foreground="Azure" x:Name="ParametersButton" Click="ParametersButton_OnClick"></Button>
+            <Button Grid.Row="4" Foreground="Azure" x:Name="TechButton" Click="TechButton_OnClick"></Button>
         </Grid>
         <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>

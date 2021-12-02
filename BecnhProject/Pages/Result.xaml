@@ -7,6 +7,21 @@
       mc:Ignorable="d"
       Title="Result" Height="450" Width="800">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" FontSize="72" VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            Результат:
+        </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" x:Name="ResultBlock" FontSize="54"
+                   VerticalAlignment="Center" HorizontalAlignment="Center" />
     </Grid>
 </Page>

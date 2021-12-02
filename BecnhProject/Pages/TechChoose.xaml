@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:BecnhProject.Pages"
       mc:Ignorable="d"
       Title="TechChoose" Height="450" Width="600">
-    <Grid>
+    <Grid x:Name="Holder">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -24,27 +24,41 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap">Введите минимальную шероховатость поверхностей</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1" TextWrapping="Wrap">Введите самый низкий квалитет точности</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2" TextWrapping="Wrap">Количество поверхностей с введеным квалитетом</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap">Внутренняя резьба<LineBreak/>Введите количество:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4" TextWrapping="Wrap">Внешняя резьба <LineBreak/>Введите количество:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="5" TextWrapping="Wrap">Укажите наличие тонкостенных элементов</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap">Укажите наличие операций, требующих фрезерной обработки</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="7" TextWrapping="Wrap">Эрозия (покрытие)</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="8" TextWrapping="Wrap">Термическая обработка</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap">Введите минимальную шероховатость поверхностей</TextBlock> <!--  <ComboBox></ComboBox> 1,05 + 0.05 до 1.2--> 
+        <TextBlock Grid.Column="0" Grid.Row="1" TextWrapping="Wrap">Введите самый низкий квалитет точности</TextBlock>  <!--  <ComboBox></ComboBox> 1.2 должно быть значение "без значения"-->
+        <TextBlock Grid.Column="0" Grid.Row="2" TextWrapping="Wrap">Количество поверхностей с введеным квалитетом</TextBlock>  <!-- 1.2 -->
+        <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap">Внутренняя резьба<LineBreak/>Введите количество:</TextBlock> <!-- 1.2 -->
+        <TextBlock Grid.Column="0" Grid.Row="4" TextWrapping="Wrap">Внешняя резьба <LineBreak/>Введите количество:</TextBlock> <!-- 1.2 -->
+        <TextBlock Grid.Column="0" Grid.Row="5" TextWrapping="Wrap">Укажите наличие тонкостенных элементов</TextBlock> <!-- 1.2 -->
+        <TextBlock Grid.Column="0" Grid.Row="6" TextWrapping="Wrap">Укажите наличие операций, требующих фрезерной обработки</TextBlock> <!-- 1.2 -->
+        <TextBlock Grid.Column="0" Grid.Row="7" TextWrapping="Wrap">Эрозия (покрытие)</TextBlock> <!-- 1.2 -->
+        <TextBlock Grid.Column="0" Grid.Row="8" TextWrapping="Wrap">Термическая обработка</TextBlock> <!-- 1.2 -->
 
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0" x:Name="MinimalPlane" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="QualitetLower" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="2" x:Name="QualitetCount" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="3" x:Name="InternalThread" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="4" x:Name="ExternalThread" />
+        <ComboBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0" x:Name="MinimalPlane" >
+            <ComboBoxItem Tag="1">Значение не выбрано</ComboBoxItem>
+            <ComboBoxItem Tag="1.05">6,3</ComboBoxItem>
+            <ComboBoxItem Tag="1.1">3,2</ComboBoxItem>
+            <ComboBoxItem Tag="1.15">1,6</ComboBoxItem>
+            <ComboBoxItem Tag="1.2">0,8</ComboBoxItem>
+            <ComboBoxItem Tag="1.5">0,4</ComboBoxItem>
+        </ComboBox>
+        <ComboBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="QualitetLower" >
+            <ComboBoxItem Tag="1">Значение не выбрано</ComboBoxItem>
+            <ComboBoxItem Tag="1.05">5</ComboBoxItem>
+            <ComboBoxItem Tag="1.1">4</ComboBoxItem>
+            <ComboBoxItem Tag="1.15">3</ComboBoxItem>
+            <ComboBoxItem Tag="1.2">2</ComboBoxItem>
+            <ComboBoxItem Tag="1.5">1</ComboBoxItem>
+        </ComboBox>
+        <TextBox PreviewTextInput="NumberWithoutPointValidationTextBox" Grid.Column="1" Grid.Row="2" x:Name="QualitetCount" />
+        <TextBox PreviewTextInput="NumberWithoutPointValidationTextBox" Grid.Column="1" Grid.Row="3" x:Name="InternalThread" />
+        <TextBox PreviewTextInput="NumberWithoutPointValidationTextBox" Grid.Column="1" Grid.Row="4" x:Name="ExternalThread" />
         <CheckBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="5" x:Name="ThickWall" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <CheckBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="6" x:Name="LatheOperation" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <CheckBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="7" x:Name="Erosion" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <CheckBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="8" x:Name="Term" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         
-        <TextBlock Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" x:Name="ParametersText" Margin="20 0 0 0"/>
+        <TextBlock Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" x:Name="ParametersText" Margin="20 0 0 0" Tag="tag"/>
         <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" x:Name="NextButton" Click="NextButton_OnClick">Результат</Button>
     </Grid>
 </Page>

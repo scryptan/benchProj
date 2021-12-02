@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using BecnhProject.Extensions;
 using BecnhProject.Models;
 
 namespace BecnhProject.Pages
 {
-    public partial class BlankChoose : Page
+    public partial class BlankChoose : Page, IInitializable
     {
         private readonly MainWindow _mainWindow;
 
@@ -14,28 +15,47 @@ namespace BecnhProject.Pages
         {
             _mainWindow = mainWindow;
             InitializeComponent();
+        }
+
+        private void ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var blankType = Enum.Parse<BlankType>(((Button) sender).Name.Replace("Button", ""));
+            _mainWindow.BlankType = blankType;
+            _mainWindow.SetParametersWindow();
+        }
+
+        public void Init()
+        {
             var casting = new Button
             {
                 Name = $"{BlankType.Casting}Button",
                 Content = BlankType.Casting.ToDescriptionString(),
+                Background = _mainWindow.blueGradientBrush,
+                Foreground = new SolidColorBrush(Colors.Azure)
             };
             MainGrid.Children.Add(casting);
             var list = new Button
             {
                 Name = $"{BlankType.List}Button",
                 Content = BlankType.List.ToDescriptionString(),
+                Background = _mainWindow.blueGradientBrush,
+                Foreground = new SolidColorBrush(Colors.Azure)
             };
             MainGrid.Children.Add(list);
             var stamping = new Button
             {
                 Name = $"{BlankType.Stamping}Button",
                 Content = BlankType.Stamping.ToDescriptionString(),
+                Background = _mainWindow.blueGradientBrush,
+                Foreground = new SolidColorBrush(Colors.Azure)
             };
             MainGrid.Children.Add(stamping);
             var rollMetal = new Button
             {
                 Name = $"{BlankType.RollMetal}Button",
                 Content = BlankType.RollMetal.ToDescriptionString(),
+                Background = _mainWindow.blueGradientBrush,
+                Foreground = new SolidColorBrush(Colors.Azure)
             };
             MainGrid.Children.Add(rollMetal);
             Grid.SetRow(casting, 0);
@@ -47,13 +67,6 @@ namespace BecnhProject.Pages
             {
                 element.Click += ButtonClicked;
             }
-        }
-
-        private void ButtonClicked(object sender, RoutedEventArgs e)
-        {
-            var blankType = Enum.Parse<BlankType>(((Button) sender).Name.Replace("Button", ""));
-            _mainWindow.BlankType = blankType;
-            _mainWindow.SetParametersWindow();
         }
     }
 }

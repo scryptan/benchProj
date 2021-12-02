@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using BecnhProject.Extensions;
 using BecnhProject.Models;
 
@@ -14,15 +15,12 @@ namespace BecnhProject.Pages
         {
             _mainWindow = mainWindow;
             InitializeComponent();
-            
-            foreach (Button element in ButtonsPanel.Children)
-                element.Content = Enum.Parse<MaterialType>(element.Name.Replace("Button", "")).ToDescriptionString();
         }
 
         private void MaterialButtonClicked(object sender, RoutedEventArgs e)
         {
             CurrentButtonsPanel.Children.Clear();
-            var matType = Enum.Parse<MaterialType>(((Button) sender).Name.Replace("Button", ""));            
+            var matType = Enum.Parse<MaterialType>(((Button) sender).Name.Replace("Button", ""));
             _mainWindow.MaterialType = matType;
 
             switch (matType)
@@ -32,22 +30,28 @@ namespace BecnhProject.Pages
                     {
                         Name = $"{MaterialType.NonAlloySteel}Button",
                         Content = MaterialType.NonAlloySteel.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(nonAlloy);
                     Grid.SetRow(nonAlloy, 0);
-                    
+
                     var alloy = new Button
                     {
                         Name = $"{MaterialType.AlloySteel}Button",
                         Content = MaterialType.AlloySteel.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(alloy);
                     Grid.SetRow(nonAlloy, 1);
-                    
+
                     var highAlloy = new Button
                     {
                         Name = $"{MaterialType.HighAlloySteel}Button",
                         Content = MaterialType.HighAlloySteel.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(highAlloy);
                     Grid.SetRow(highAlloy, 2);
@@ -57,14 +61,18 @@ namespace BecnhProject.Pages
                     {
                         Name = $"{MaterialType.StainlessSteelBar}Button",
                         Content = MaterialType.StainlessSteelBar.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(bar);
                     Grid.SetRow(bar, 0);
-                    
+
                     var cast = new Button
                     {
                         Name = $"{MaterialType.StainlessSteelCast}Button",
                         Content = MaterialType.StainlessSteelCast.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(cast);
                     Grid.SetRow(cast, 1);
@@ -74,14 +82,18 @@ namespace BecnhProject.Pages
                     {
                         Name = $"{MaterialType.HeatResistanceTitan}Button",
                         Content = MaterialType.HeatResistanceTitan.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(titan);
                     Grid.SetRow(titan, 0);
-                    
+
                     var heatChecked = new Button
                     {
                         Name = $"{MaterialType.HeatResistanceChecked}Button",
                         Content = MaterialType.HeatResistanceChecked.ToDescriptionString(),
+                        Background = _mainWindow.blueGradientBrush,
+                        Foreground = new SolidColorBrush(Colors.Azure)
                     };
                     CurrentButtonsPanel.Children.Add(heatChecked);
                     Grid.SetRow(heatChecked, 1);
@@ -97,7 +109,13 @@ namespace BecnhProject.Pages
 
         public void Init()
         {
-            
+            foreach (Button element in ButtonsPanel.Children)
+            {
+                element.Content = Enum.Parse<MaterialType>(element.Name.Replace("Button", "")).ToDescriptionString();
+
+                element.Background = _mainWindow.blueGradientBrush;
+                element.Foreground = new SolidColorBrush(Colors.Azure);
+            }
         }
     }
 }

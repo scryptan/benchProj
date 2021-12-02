@@ -22,12 +22,12 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0">L, мм = </TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1">H, мм = </TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" x:Name="HeightBlock">H, мм = </TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="2">D, мм = </TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="3">M, кг = </TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="4">n, шт = </TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="5">Дальваческий материал</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="6">Покупной материал <LineBreak/>Введите стоимость, руб</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6">Покупной материал <LineBreak />Введите стоимость, руб</TextBlock>
 
         <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0" x:Name="LengthBox" />
         <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="HeightBox" />
