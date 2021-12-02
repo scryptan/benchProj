@@ -233,10 +233,10 @@ namespace BecnhProject
             ? BlankLength * BlankHeight * BlankDiameter / 1_000_000
             : BlankLength * (decimal) Math.PI * BlankDiameter * BlankDiameter / 4 / 1_000_000;
 
-        public decimal BlankMass => V * _density[MaterialType];
+        public decimal BlankMass => V * _density[MaterialType] / 1000;
         public decimal ChipMass => BlankMass - BlueprintMass;
         public int C = 3000;
-        public decimal Q => _benchCharacteristics[(MaterialType, BenchModel)].GetValue() * _density[MaterialType];
+        public decimal Q => _benchCharacteristics[(MaterialType, BenchModel)].GetValue() * _density[MaterialType] * 60 / 1_000_000;
 
         public MainWindow()
         {
