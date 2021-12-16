@@ -44,6 +44,7 @@ namespace BecnhProject
         public LinearGradientBrush blueGradientBrush;
         public LinearGradientBrush greenGradientBrush;
 
+        private readonly FillPage _fillPage;
         private readonly BenchChoose _benchChoose;
         private readonly MaterialChoose _materialChoose;
         private readonly BlankChoose _blankChoose;
@@ -229,17 +230,20 @@ namespace BecnhProject
             },
         };
 
+        private decimal CalcLength => BlankLength + 5;
+        
         public decimal V => BlankHeight > 0
-            ? BlankLength * BlankHeight * BlankDiameter / 1_000_000
-            : BlankLength * (decimal) Math.PI * BlankDiameter * BlankDiameter / 4 / 1_000_000;
+            ? CalcLength * BlankHeight * BlankDiameter / 1_000_000
+            : CalcLength * (decimal) Math.PI * BlankDiameter * BlankDiameter / 4 / 1_000_000;
 
-        public decimal BlankMass => V * _density[MaterialType] / 1000;
+        public decimal BlankMass => V * (_density.ContainsKey(MaterialType) ?_density[MaterialType]: 0) / 1000;
         public decimal ChipMass => BlankMass - BlueprintMass;
         public int C = 3000;
         public decimal Q => _benchCharacteristics[(MaterialType, BenchModel)].GetValue() * _density[MaterialType] * 60 / 1_000_000;
 
         public MainWindow()
         {
+            _fillPage = new FillPage(this);
             _benchChoose = new BenchChoose(this);
             _materialChoose = new MaterialChoose(this);
             _blankChoose = new BlankChoose(this);
@@ -251,7 +255,7 @@ namespace BecnhProject
             greenGradientBrush = new LinearGradientBrush(Color.FromRgb(179, 236, 195), Color.FromRgb(21, 190, 71), 90);
 
             InitializeComponent();
-            SetStartScreen();
+            MainFrame.Navigate(_fillPage);
         }
 
         public void SetStartScreen()
@@ -341,6 +345,12 @@ namespace BecnhProject
 
         public void SetResultWindow()
         {
+            if (ResultSum < 0)
+            {
+                SetParametersWindow();
+                return;
+            }
+
             TechButton.Content = "Дополнительные параметры";
             _result.Init();
             MainFrame.Navigate(_result);

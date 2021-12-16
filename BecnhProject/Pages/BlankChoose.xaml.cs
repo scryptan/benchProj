@@ -31,7 +31,8 @@ namespace BecnhProject.Pages
                 Name = $"{BlankType.Casting}Button",
                 Content = BlankType.Casting.ToDescriptionString(),
                 Background = _mainWindow.blueGradientBrush,
-                Foreground = new SolidColorBrush(Colors.Azure)
+                Foreground = new SolidColorBrush(Colors.Azure),
+                FontSize = 52
             };
             MainGrid.Children.Add(casting);
             var list = new Button
@@ -39,7 +40,8 @@ namespace BecnhProject.Pages
                 Name = $"{BlankType.List}Button",
                 Content = BlankType.List.ToDescriptionString(),
                 Background = _mainWindow.blueGradientBrush,
-                Foreground = new SolidColorBrush(Colors.Azure)
+                Foreground = new SolidColorBrush(Colors.Azure),
+                FontSize = 52
             };
             MainGrid.Children.Add(list);
             var stamping = new Button
@@ -47,7 +49,8 @@ namespace BecnhProject.Pages
                 Name = $"{BlankType.Stamping}Button",
                 Content = BlankType.Stamping.ToDescriptionString(),
                 Background = _mainWindow.blueGradientBrush,
-                Foreground = new SolidColorBrush(Colors.Azure)
+                Foreground = new SolidColorBrush(Colors.Azure),
+                FontSize = 52
             };
             MainGrid.Children.Add(stamping);
             var rollMetal = new Button
@@ -55,13 +58,14 @@ namespace BecnhProject.Pages
                 Name = $"{BlankType.RollMetal}Button",
                 Content = BlankType.RollMetal.ToDescriptionString(),
                 Background = _mainWindow.blueGradientBrush,
-                Foreground = new SolidColorBrush(Colors.Azure)
+                Foreground = new SolidColorBrush(Colors.Azure),
+                FontSize = 52
             };
             MainGrid.Children.Add(rollMetal);
-            Grid.SetRow(casting, 0);
+            Grid.SetRow(rollMetal, 0);
             Grid.SetRow(list, 1);
             Grid.SetRow(stamping, 2);
-            Grid.SetRow(rollMetal, 3);
+            Grid.SetRow(casting, 3);
 
             foreach (Button element in MainGrid.Children)
             {

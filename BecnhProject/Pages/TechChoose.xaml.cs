@@ -69,19 +69,19 @@ namespace BecnhProject.Pages
 
             var ldStr = $"{ld:0.000}";
             if (_mainWindow.BlankHeight == -1)
-                ParametersText.Text = $@"L, мм={_mainWindow.BlankLength}
-D, мм={_mainWindow.BlankDiameter}
-M, кг={_mainWindow.BlueprintMass}
-n, шт={_mainWindow.ModelCount}
+                ParametersText.Text = $@"Длина заготовки, мм={_mainWindow.BlankLength}
+Диаметр заготовки, мм={_mainWindow.BlankDiameter}
+Масса детали, кг={_mainWindow.BlankMass}
+Количество заготовок в партии, шт={_mainWindow.ModelCount}
 
 Сотношение длины к диаметру:
 L/D: {ldStr}";
             else
-                ParametersText.Text = $@"L, мм={_mainWindow.BlankLength}
-D, мм={_mainWindow.BlankDiameter}
-M, кг={_mainWindow.BlueprintMass}
-H, мм={_mainWindow.BlankHeight}
-n, шт={_mainWindow.ModelCount}
+                ParametersText.Text = $@"Длина заготовки, мм={_mainWindow.BlankLength}
+Диаметр заготовки, мм={_mainWindow.BlankDiameter}
+Масса детали, кг={_mainWindow.BlankMass}
+Высота заготовки, мм={_mainWindow.BlankHeight}
+Количество заготовок в партии, шт={_mainWindow.ModelCount}
 
 Сотношение длины к диаметру:
 L/D={ldStr}";

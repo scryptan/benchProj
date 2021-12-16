@@ -31,7 +31,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.NonAlloySteel}Button",
                         Content = MaterialType.NonAlloySteel.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(nonAlloy);
                     Grid.SetRow(nonAlloy, 0);
@@ -41,7 +42,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.AlloySteel}Button",
                         Content = MaterialType.AlloySteel.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(alloy);
                     Grid.SetRow(nonAlloy, 1);
@@ -51,7 +53,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.HighAlloySteel}Button",
                         Content = MaterialType.HighAlloySteel.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(highAlloy);
                     Grid.SetRow(highAlloy, 2);
@@ -62,7 +65,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.StainlessSteelBar}Button",
                         Content = MaterialType.StainlessSteelBar.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(bar);
                     Grid.SetRow(bar, 0);
@@ -72,7 +76,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.StainlessSteelCast}Button",
                         Content = MaterialType.StainlessSteelCast.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(cast);
                     Grid.SetRow(cast, 1);
@@ -83,7 +88,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.HeatResistanceTitan}Button",
                         Content = MaterialType.HeatResistanceTitan.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(titan);
                     Grid.SetRow(titan, 0);
@@ -93,7 +99,8 @@ namespace BecnhProject.Pages
                         Name = $"{MaterialType.HeatResistanceChecked}Button",
                         Content = MaterialType.HeatResistanceChecked.ToDescriptionString(),
                         Background = _mainWindow.blueGradientBrush,
-                        Foreground = new SolidColorBrush(Colors.Azure)
+                        Foreground = new SolidColorBrush(Colors.Azure),
+                        FontSize = 42
                     };
                     CurrentButtonsPanel.Children.Add(heatChecked);
                     Grid.SetRow(heatChecked, 1);
@@ -115,6 +122,7 @@ namespace BecnhProject.Pages
 
                 element.Background = _mainWindow.blueGradientBrush;
                 element.Foreground = new SolidColorBrush(Colors.Azure);
+                element.FontSize = 42;
             }
         }
     }
