@@ -20,22 +20,52 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="0">Длина заготовки, мм = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="1" x:Name="HeightBlock">Высота заготовки, мм = </TextBlock>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="2">Диаметр заготовки, мм = </TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="2" x:Name="DiameterBlock">Диаметр заготовки, мм = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="3">Масса детали, кг = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="4">Количество заготовок в партии, шт = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="5">Дальваческий материал</TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="6">Покупной материал <LineBreak />Введите стоимость, руб</TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="7">Диаметр отверстия, мм = </TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="8">Длина отверстия, мм = </TextBlock>
 
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0" x:Name="LengthBox" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="HeightBox" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="2" x:Name="DiameterBox" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="3" x:Name="MassBox" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="4" x:Name="CountBox" />
+        <TextBox  FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="0" x:Name="LengthBox" />
+        <TextBox  FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="HeightBox" />
+        <TextBox  FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="2" x:Name="DiameterBox" />
+        <ComboBox FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="1" x:Name="DiameterСomboBox" >
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">Значение не выбрано</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">6</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">8</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">10</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">12</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">14</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">16</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">18</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">20</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">22</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">25</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">28</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">32</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">36</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">40</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">45</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">50</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">55</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">60</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">70</ComboBoxItem>
+            <ComboBoxItem FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center">80</ComboBoxItem>
+        </ComboBox>
+        <TextBox FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="3" x:Name="MassBox" />
+        <TextBox FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="4" x:Name="CountBox" />
         <CheckBox Grid.Column="1" Grid.Row="5" x:Name="IsFree" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <TextBox PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="6" x:Name="CostBox" />
-        <Button Grid.Column="1" Grid.Row="7" x:Name="NextButton" Click="NextButton_OnClick">Далее</Button>
+        <TextBox FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="6" x:Name="CostBox" />
+        <TextBox FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="7" x:Name="HoleDiameterBox" />
+        <TextBox FontSize="26" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Grid.Row="8" x:Name="HoleLengthBox" />
+        
+        <Button Grid.Column="1" Grid.Row="9" x:Name="NextButton" Click="NextButton_OnClick">Далее</Button>
     </Grid>
 </Page>

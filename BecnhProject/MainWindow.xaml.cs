@@ -19,13 +19,13 @@ namespace BecnhProject
             }
             catch (Exception)
             {
-                return 0;
+                return -1;
             }
         }
 
         public decimal Coef = 1;
 
-        public decimal ResultSum => Sum() * Coef * ModelCount + MaterialCost;
+        public decimal ResultSum => Sum() * Coef * ModelCount + MaterialCost * BlankMass * ModelCount;
 
         public BenchModel BenchModel;
         public MaterialType MaterialType;
@@ -37,6 +37,9 @@ namespace BecnhProject
 
         public decimal BlueprintMass;
         public decimal ModelCount;
+
+        public decimal HoleDiameter;
+        public decimal HoleLength;
 
         public bool IsFree;
         public decimal MaterialCost;
@@ -230,7 +233,7 @@ namespace BecnhProject
             },
         };
 
-        private decimal CalcLength => BlankLength + 5;
+        private decimal CalcLength => BlankLength + 7;
         
         public decimal V => BlankHeight > 0
             ? CalcLength * BlankHeight * BlankDiameter / 1_000_000
@@ -255,6 +258,11 @@ namespace BecnhProject
             greenGradientBrush = new LinearGradientBrush(Color.FromRgb(179, 236, 195), Color.FromRgb(21, 190, 71), 90);
 
             InitializeComponent();
+            BenchButton.Content = string.Empty;
+            MaterialButton.Content = string.Empty;
+            BlankButton.Content = string.Empty;
+            TechButton.Content = string.Empty;
+            ParametersButton.Content = string.Empty;
             MainFrame.Navigate(_fillPage);
         }
 

@@ -22,7 +22,7 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" FontSize="32" Foreground="Azure" x:Name="BenchButton" Click="BenchButton_OnClick"></Button>
+            <Button Grid.Row="0" FontSize="32" Foreground="Azure" x:Name="BenchButton" Click="BenchButton_OnClick">Some text</Button>
             <Button Grid.Row="1" FontSize="32" Foreground="Azure" x:Name="MaterialButton" Click="MaterialButton_OnClick"></Button>
             <Button Grid.Row="2" FontSize="32" Foreground="Azure" x:Name="BlankButton" Click="BlankButton_OnClick"></Button>
             <Button Grid.Row="3" FontSize="26" Foreground="Azure" x:Name="ParametersButton" Click="ParametersButton_OnClick"></Button>

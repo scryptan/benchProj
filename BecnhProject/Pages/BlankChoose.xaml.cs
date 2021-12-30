@@ -57,7 +57,7 @@ namespace BecnhProject.Pages
             {
                 Name = $"{BlankType.RollMetal}Button",
                 Content = BlankType.RollMetal.ToDescriptionString(),
-                Background = _mainWindow.blueGradientBrush,
+                Background = _mainWindow.greenGradientBrush,
                 Foreground = new SolidColorBrush(Colors.Azure),
                 FontSize = 52
             };

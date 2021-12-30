@@ -27,6 +27,22 @@ namespace BecnhProject.Pages
                 _mainWindow.Coef *= defaultCoef;
             if (GetDecimalValue(ExternalThread.Text) != 0)
                 _mainWindow.Coef *= defaultCoef;
+            
+            if (_mainWindow.BlankLength / _mainWindow.HoleLength < 2)
+                _mainWindow.Coef *= defaultCoef;
+            
+            switch (_mainWindow.HoleLength / _mainWindow.HoleDiameter)
+            {
+                case 1/(decimal)2:
+                    _mainWindow.Coef *= 1;
+                    break;
+                case 1/(decimal)1:
+                    _mainWindow.Coef *= 1;
+                    break;
+                case 1/(decimal)3:
+                    _mainWindow.Coef *= 1;
+                    break;
+            }
 
             if (MinimalPlane.SelectedItem != null)
                 _mainWindow.Coef *= GetDecimalValue(((ComboBoxItem) MinimalPlane.SelectedItem).Tag.ToString());
@@ -58,9 +74,11 @@ namespace BecnhProject.Pages
         public void Init()
         {
             decimal ld = 0;
+            decimal ldHole = 0;
             try
             {
                 ld = _mainWindow.BlankLength / _mainWindow.BlankDiameter;
+                ldHole = _mainWindow.HoleLength / _mainWindow.HoleDiameter;
             }
             catch (Exception e)
             {
@@ -68,14 +86,17 @@ namespace BecnhProject.Pages
             }
 
             var ldStr = $"{ld:0.000}";
+            var ldHoleStr = $"{ldHole:0.000}";
             if (_mainWindow.BlankHeight == -1)
                 ParametersText.Text = $@"Длина заготовки, мм={_mainWindow.BlankLength}
 Диаметр заготовки, мм={_mainWindow.BlankDiameter}
 Масса детали, кг={_mainWindow.BlankMass}
 Количество заготовок в партии, шт={_mainWindow.ModelCount}
 
-Сотношение длины к диаметру:
-L/D: {ldStr}";
+Сотношение длины детали к диаметру детали:
+L/D: {ldStr}
+Сотношение длины отверстия к диаметру отверстия:
+L/D: {ldHoleStr}";
             else
                 ParametersText.Text = $@"Длина заготовки, мм={_mainWindow.BlankLength}
 Диаметр заготовки, мм={_mainWindow.BlankDiameter}
@@ -83,8 +104,10 @@ L/D: {ldStr}";
 Высота заготовки, мм={_mainWindow.BlankHeight}
 Количество заготовок в партии, шт={_mainWindow.ModelCount}
 
-Сотношение длины к диаметру:
-L/D={ldStr}";
+Сотношение длины детали к диаметру детали:
+L/D={ldStr}
+Сотношение длины отверстия к диаметру отверстия:
+L/D={ldHoleStr}";
 
             foreach (var element in Holder.Children)
             {

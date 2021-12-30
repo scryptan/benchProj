@@ -38,6 +38,17 @@ namespace BecnhProject.Pages
                 _mainWindow.ModelCount = GetDecimalValue(CountBox.Text);
                 _mainWindow.IsFree = IsFree.IsChecked ?? false;
                 _mainWindow.MaterialCost = _mainWindow.IsFree ? 0 : GetDecimalValue(CostBox.Text);
+                _mainWindow.HoleDiameter = GetDecimalValue(HoleDiameterBox.Text);
+                _mainWindow.HoleLength = GetDecimalValue(HoleLengthBox.Text);
+                if (HeightBox.Visibility != Visibility.Visible)
+                {
+                    _mainWindow.BlankDiameter = GetDecimalValue(DiameterСomboBox.Text);
+                    if (_mainWindow.BlankDiameter < 30)
+                        _mainWindow.Coef *= (40 / _mainWindow.BlankDiameter);
+
+                    if (_mainWindow.BlankDiameter > 50)
+                        _mainWindow.Coef *= (decimal) 1.5;
+                }
             }
             catch (Exception exception)
             {
@@ -62,6 +73,19 @@ namespace BecnhProject.Pages
                 _mainWindow.BlankType == BlankType.RollMetal ? Visibility.Hidden : Visibility.Visible;
             HeightBlock.Visibility =
                 _mainWindow.BlankType == BlankType.RollMetal ? Visibility.Hidden : Visibility.Visible;
+
+            if (HeightBox.Visibility == Visibility.Visible)
+            {
+                DiameterBlock.Text = "Ширина заготовки, мм = ";
+                DiameterBox.Visibility = Visibility.Visible;
+                DiameterСomboBox.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                DiameterBlock.Text = "Диаметр заготовки, мм = ";
+                DiameterBox.Visibility = Visibility.Hidden;
+                DiameterСomboBox.Visibility = Visibility.Visible;
+            }
         }
     }
 }
