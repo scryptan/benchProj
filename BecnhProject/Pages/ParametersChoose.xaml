@@ -29,7 +29,7 @@
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="3">Масса детали, кг = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="4">Количество заготовок в партии, шт = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="5">Дальваческий материал</TextBlock>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="6">Покупной материал <LineBreak />Введите стоимость, руб</TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="6">Покупной материал <LineBreak />Введите стоимость в руб за кг</TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="7">Диаметр отверстия, мм = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="8">Длина отверстия, мм = </TextBlock>
 
