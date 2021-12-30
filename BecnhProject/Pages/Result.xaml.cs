@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿using System.Text;
 using System.Windows.Controls;
 
 namespace BecnhProject.Pages
@@ -15,7 +15,12 @@ namespace BecnhProject.Pages
 
         public void Init()
         {
-            ResultBlock.Text = ((long)_mainWindow.ResultSum).ToString(CultureInfo.InvariantCulture);
+            var res = new StringBuilder();
+            res.AppendLine($"Общая масса всех заготовок, в кг: {_mainWindow.BlankMass * _mainWindow.ModelCount}");
+            res.AppendLine($"Стоимость одной заготовки, в руб: {_mainWindow.MaterialCost * _mainWindow.BlankMass}");
+            res.AppendLine($"Стоимость партии, в руб: {_mainWindow.ResultSum}");
+            res.Append($"Стоимость одной детали, в руб: {_mainWindow.Sum() * _mainWindow.Coef}");
+            ResultBlock.Text = res.ToString();
         }
     }
 }

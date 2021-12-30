@@ -23,13 +23,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="0">Длина заготовки, мм = </TextBlock>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="1" x:Name="HeightBlock">Высота заготовки, мм = </TextBlock>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="2" x:Name="DiameterBlock">Диаметр заготовки, мм = </TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="0">Длина детали, мм = </TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="1" x:Name="HeightBlock">Высота детали, мм = </TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="2" x:Name="DiameterBlock">Диаметр детали, мм = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="3">Масса детали, кг = </TextBlock>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="4">Количество заготовок в партии, шт = </TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="4">Количество деталей в партии, шт = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="5">Дальваческий материал</TextBlock>
-        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="6">Покупной материал <LineBreak />Введите стоимость в руб за кг</TextBlock>
+        <TextBlock FontSize="26" Grid.Column="0" Grid.Row="6">Стоимость материала в рубях за килограмм = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="7">Диаметр отверстия, мм = </TextBlock>
         <TextBlock FontSize="26" Grid.Column="0" Grid.Row="8">Длина отверстия, мм = </TextBlock>
 

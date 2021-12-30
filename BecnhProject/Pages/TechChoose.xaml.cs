@@ -88,21 +88,21 @@ namespace BecnhProject.Pages
             var ldStr = $"{ld:0.000}";
             var ldHoleStr = $"{ldHole:0.000}";
             if (_mainWindow.BlankHeight == -1)
-                ParametersText.Text = $@"Длина заготовки, мм={_mainWindow.BlankLength}
-Диаметр заготовки, мм={_mainWindow.BlankDiameter}
-Масса детали, кг={_mainWindow.BlankMass}
-Количество заготовок в партии, шт={_mainWindow.ModelCount}
+                ParametersText.Text = $@"Длина детали, мм={_mainWindow.BlankLength}
+Диаметр детали, мм={_mainWindow.BlankDiameter}
+Масса заготовки, кг={_mainWindow.BlankMass}
+Количество детали в партии, шт={_mainWindow.ModelCount}
 
 Сотношение длины детали к диаметру детали:
 L/D: {ldStr}
 Сотношение длины отверстия к диаметру отверстия:
 L/D: {ldHoleStr}";
             else
-                ParametersText.Text = $@"Длина заготовки, мм={_mainWindow.BlankLength}
-Диаметр заготовки, мм={_mainWindow.BlankDiameter}
-Масса детали, кг={_mainWindow.BlankMass}
-Высота заготовки, мм={_mainWindow.BlankHeight}
-Количество заготовок в партии, шт={_mainWindow.ModelCount}
+                ParametersText.Text = $@"Длина детали, мм={_mainWindow.BlankLength}
+Диаметр детали, мм={_mainWindow.BlankDiameter}
+Масса заготовки, кг={_mainWindow.BlankMass}
+Высота детали, мм={_mainWindow.BlankHeight}
+Количество детали в партии, шт={_mainWindow.ModelCount}
 
 Сотношение длины детали к диаметру детали:
 L/D={ldStr}
