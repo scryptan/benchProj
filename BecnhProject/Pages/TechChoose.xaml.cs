@@ -27,21 +27,25 @@ namespace BecnhProject.Pages
                 _mainWindow.Coef *= defaultCoef;
             if (GetDecimalValue(ExternalThread.Text) != 0)
                 _mainWindow.Coef *= defaultCoef;
-            
-            if (_mainWindow.BlankLength / _mainWindow.HoleLength < 2)
+
+            if (_mainWindow.HoleLength != 0 && _mainWindow.BlankLength != 0 &&
+                _mainWindow.BlankLength / _mainWindow.HoleLength < 2)
                 _mainWindow.Coef *= defaultCoef;
             
-            switch (_mainWindow.HoleLength / _mainWindow.HoleDiameter)
+            if (_mainWindow.HoleLength != 0 && _mainWindow.HoleDiameter != 0)
             {
-                case 1/(decimal)2:
-                    _mainWindow.Coef *= 1;
-                    break;
-                case 1/(decimal)1:
-                    _mainWindow.Coef *= 1;
-                    break;
-                case 1/(decimal)3:
-                    _mainWindow.Coef *= 1;
-                    break;
+                switch (_mainWindow.HoleLength / _mainWindow.HoleDiameter)
+                {
+                    case 1 / (decimal) 2:
+                        _mainWindow.Coef *= 1;
+                        break;
+                    case 1 / (decimal) 1:
+                        _mainWindow.Coef *= 1;
+                        break;
+                    case 1 / (decimal) 3:
+                        _mainWindow.Coef *= 1;
+                        break;
+                }
             }
 
             if (MinimalPlane.SelectedItem != null)
